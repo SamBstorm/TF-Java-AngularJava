@@ -7,6 +7,7 @@ import { DemoRoutingModule } from './demo/demo-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { ExerciceRoutingModule } from './exercice/exercice-routing.module';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     BrowserModule,
     AppRoutingModule,
     DemoRoutingModule,
-    ExerciceRoutingModule
+    ExerciceRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
