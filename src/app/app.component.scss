@@ -1,0 +1,11 @@
+div.container{
+    display: flex;
+}
+
+div.router{
+    flex-grow: 10;
+}
+
+app-navigation{
+    flex-grow: 2;
+}
