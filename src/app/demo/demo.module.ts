@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { DemoPipesComponent } from './components/demo-pipes/demo-pipes.component';
 import { AveragePipe } from './pipes/average.pipe';
 import { SharedModule } from '../shared/shared.module';
+import { IntervalComponent } from './components/interval/interval.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SharedModule } from '../shared/shared.module';
     DemoHomeComponent,
     DemoBindingComponent,
     DemoPipesComponent,
-    AveragePipe
+    AveragePipe,
+    IntervalComponent
   ],
   imports: [
     CommonModule,
