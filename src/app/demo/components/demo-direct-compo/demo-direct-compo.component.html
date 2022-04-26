@@ -1,0 +1,20 @@
+<h3>Directive de Composant</h3>
+<h4>Directive ngStyle</h4>
+<div><label>Veuillez choisir la couleur du texte :</label><input type="color" [(ngModel)]="couleur"></div>
+<div><label>Veuillez choisir la taille du texte :</label><input type="range" [(ngModel)]="fontSize" min="4" max="32" step="2">{{fontSize}}px</div>
+<p [ngStyle]="{color : couleur, fontSize : fontSize+'px'}">Voici un paragraphe qui grâce à la directive <span [ngStyle]="{fontSize : blinkingSize+'px'}">[ngStyle]</span> va pouvoir changer de couleur</p>
+
+<h4>Directive ngClass</h4>
+<p>Cocher une case changera la class en 'selected'</p>
+<ul>
+    <li>
+        <input type="checkbox" [(ngModel)]="objet1"><span [ngClass]="{selected : objet1, isTooBig : fontSize > 24}">Pizza</span>
+    </li>
+    <li>
+        <input type="checkbox" [(ngModel)]="objet2"><span [ngClass]="{selected : objet2}">Hamburger</span>
+    </li>
+    <li>
+        <input type="checkbox" [(ngModel)]="objet3"><span [ngClass]="{selected : objet3}">Spaghetti</span>
+    </li>
+</ul>
+<p>Nombre d'élément sélectionné : {{total}} <input type="button" value="Refresh" (click)="refreshTotal()"></p>

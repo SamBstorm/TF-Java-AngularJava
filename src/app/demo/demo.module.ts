@@ -9,6 +9,11 @@ import { DemoPipesComponent } from './components/demo-pipes/demo-pipes.component
 import { AveragePipe } from './pipes/average.pipe';
 import { SharedModule } from '../shared/shared.module';
 import { IntervalComponent } from './components/interval/interval.component';
+import { DemoDirectCompoComponent } from './components/demo-direct-compo/demo-direct-compo.component';
+import { DemoDirectStructComponent } from './components/demo-direct-struct/demo-direct-struct.component';
+import { DemoDirectCustomComponent } from './components/demo-direct-custom/demo-direct-custom.component';
+import { HighlineDirective } from './directives/highline.directive';
+import { AddLineDirective } from './directives/add-line.directive';
 
 
 @NgModule({
@@ -17,7 +22,12 @@ import { IntervalComponent } from './components/interval/interval.component';
     DemoBindingComponent,
     DemoPipesComponent,
     AveragePipe,
-    IntervalComponent
+    IntervalComponent,
+    DemoDirectCompoComponent,
+    DemoDirectStructComponent,
+    DemoDirectCustomComponent,
+    HighlineDirective,
+    AddLineDirective
   ],
   imports: [
     CommonModule,

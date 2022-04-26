@@ -1,0 +1,49 @@
+<h3>Directives structurelles</h3>
+<h4>*ngIf</h4>
+<input type="checkbox" [(ngModel)]="isChecked">
+<div *ngIf="isChecked; else baliseElse">
+    <h4>Ceci est une directive *ngIf</h4>
+    <p>L'élément est visible si on obtient un true, sinon il est <strong>non-généré</strong>, donc non présent dans le code HTML!</p>
+</div>
+<ng-template #baliseElse>
+    <div>
+        <h4>Ceci est une directive *ngIf pour le else</h4>
+        <p>Pour un else, il faut créer un ng-template qui aura un nom grâce au # .</p>
+    </div>
+</ng-template>
+
+<div [hidden]="!isChecked">
+    <h4>Ceci est un binding d'attribut sur Hidden</h4>
+    <p>L'élément est visible si false, mais <strong>est constament présent</strong>  dans le code HTML!</p>
+</div>
+<h4>*ngFor</h4>
+<ul>
+    <li *ngFor="let name of names; let i = index">{{i}} : {{name}}</li>
+</ul>
+
+<div [ngStyle]="{display : 'flex'}">
+    <ng-container *ngIf="students.length > 0; else noStudents " >
+        <ng-container *ngFor="let student of students">
+            <div *ngIf="student.className == 'Java'" [ngStyle]="{minWidth:'100px', minHeight:'64px', border:'1px solid black'}"><h5>{{student.firstname}}</h5><p>{{student.className}}</p></div>
+        </ng-container>
+    </ng-container>
+</div>
+<ng-template #noStudents>
+    <p>Il n'y a pas d'étudiants</p>
+</ng-template>
+
+<h4>[ngSwitch]</h4>
+
+<div>
+    <div><label>Pizza</label><input type="radio" name="repas" [(ngModel)]="repas" value="Pizza"></div>
+    <div><label>Hamburger</label><input type="radio" name="repas" [(ngModel)]="repas" value="Hamburger"></div>
+    <div><label>Spaghettis</label><input type="radio" name="repas" [(ngModel)]="repas" value="Spaghetti"></div>
+    <div><label>Autre...</label><input type="radio" name="repas" [(ngModel)]="repas" value=""></div>
+</div>
+
+<div [ngSwitch]="repas">
+    <p *ngSwitchCase="'Pizza'">Voici votre pizza!</p>
+    <p *ngSwitchCase="'Hamburger'">Voici votre hamburger!</p>
+    <p *ngSwitchCase="'Spaghetti'">Voici votre assiette de Spaghettis!</p>
+    <p *ngSwitchDefault >Veuillez choisir un repas...</p>
+</div>
