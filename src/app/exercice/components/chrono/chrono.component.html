@@ -1,0 +1,6 @@
+<p>{{count | chronoView}}</p>
+<div>
+    <input type="button" value="Start" (click)="startChrono()" [disabled]="isRunning">
+    <input type="button" value="Pause" (click)="pauseChrono()" [disabled]="!isRunning">
+    <input type="button" value="Reset" (click)="resetChrono()" [disabled]="count == 0">
+</div>
