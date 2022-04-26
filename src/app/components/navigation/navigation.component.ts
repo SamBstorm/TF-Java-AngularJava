@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Link } from 'src/app/models/link';
 
 @Component({
   selector: 'app-navigation',
@@ -7,6 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
+  public menu : Link[] = [
+    new Link('Accueil','/',undefined, true),
+    new Link('Démonstrations','/demo',[
+      new Link('Démo - Bindings','/binding',undefined, false),
+      new Link('Démo - Pipes','/pipe',undefined, false),
+      new Link('Démo - Intervals (JS)','/interval',undefined, false),
+      new Link('Démo - Directives Composants','/directCompo',undefined, false),
+      new Link('Démo - Directives Structurelles','/directStruct',undefined, false),
+      new Link('Démo - Directives Personnalisées','/directCustom',undefined, false),
+    ],true),
+    new Link('Exercices','/exo',[
+      new Link('Exercice - Chronomètre','/chrono',undefined,false)
+    ],true)
+  ];
   constructor() { }
 
   ngOnInit(): void {

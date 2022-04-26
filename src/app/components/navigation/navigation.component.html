@@ -1,6 +1,6 @@
 <!-- nav>ul>li*3>a>div -->
 <nav>
-    <ul>
+    <!-- <ul>
         <li>
             <a routerLink="/">
                 <div>Accueil</div>
@@ -50,6 +50,30 @@
             <a routerLink="/exo/chrono">
                 <div>Exercice 01 - Chronomètre</div>
             </a>
+        </li>
+    </ul> -->
+    <ul>
+        <li *ngFor="let menuItem of menu">
+            <ng-container *ngIf="menuItem.children; else noChild">
+                {{menuItem.title}}
+                <ul *ngIf="menuItem.children && menuItem.children.length > 0">
+                    <li *ngFor="let menuItemChild of menuItem.children">
+                        <ng-container *ngIf="menuItem.url && menuItemChild.url; else noUrl">
+                            <a [routerLink]="menuItem.url + menuItemChild.url">
+                                <div>{{menuItemChild.title}}</div>
+                            </a>
+                        </ng-container>
+                        <ng-template #noUrl>
+                            {{menuItemChild.title}}
+                        </ng-template>
+                    </li>
+                </ul>
+            </ng-container>
+            <ng-template #noChild>
+                <a [routerLink]="menuItem.url">
+                    <div>{{menuItem.title}}</div>
+                </a>
+            </ng-template>
         </li>
     </ul>
 </nav>
