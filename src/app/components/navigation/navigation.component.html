@@ -53,9 +53,9 @@
         </li>
     </ul> -->
     <ul>
-        <li *ngFor="let menuItem of menu; let i = index" (click)="toggleVisible(i)">
+        <li *ngFor="let menuItem of menu; let i = index">
             <ng-container *ngIf="menuItem.children; else noChild">
-                {{menuItem.title}}
+                <div (click)="toggleVisible(i)">{{menuItem.title}}</div>
                 <ul *ngIf="menuItem.children && menuItem.children.length > 0 && menuItem.isVisible">
                     <li *ngFor="let menuItemChild of menuItem.children">
                         <ng-container *ngIf="menuItem.url && menuItemChild.url; else noUrl">
