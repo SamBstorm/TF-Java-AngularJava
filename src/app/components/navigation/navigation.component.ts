@@ -18,6 +18,7 @@ export class NavigationComponent implements OnInit {
       new Link('Démo - Directives Structurelles','/directStruct',undefined, false),
       new Link('Démo - Directives Personnalisées','/directCustom',undefined, false),
       new Link('Demo - Input & Output', '/communication', undefined, false),
+      new Link('Demo - Services', '/login', undefined, false),
     ],false),
     new Link('Exercices','/exo',[
       new Link('Exercice - Chronomètre','/chrono',undefined,false),

@@ -16,6 +16,7 @@ import { HighlineDirective } from './directives/highline.directive';
 import { AddLineDirective } from './directives/add-line.directive';
 import { DemoCommunicationComponent } from './components/demo-communication/demo-communication.component';
 import { DemoComEnfantComponent } from './components/demo-communication/demo-com-enfant/demo-com-enfant.component';
+import { DemoServicesComponent } from './components/demo-services/demo-services.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { DemoComEnfantComponent } from './components/demo-communication/demo-com
     HighlineDirective,
     AddLineDirective,
     DemoCommunicationComponent,
-    DemoComEnfantComponent
+    DemoComEnfantComponent,
+    DemoServicesComponent
   ],
   imports: [
     CommonModule,

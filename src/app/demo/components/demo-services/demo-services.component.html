@@ -1,0 +1,27 @@
+<div>
+    <div *ngIf="!connectedUser">
+        <div>
+            <label for="prenom">Prénom</label>
+            <input class="form-control" id="prenom" type="text" [(ngModel)]="prenom">
+        </div>
+
+        <div>
+            <label for="password">Mot de passe</label>
+            <input class="form-control" id="password" type="password" [(ngModel)]="password">
+        </div>
+        <div>
+            <input class="btn btn-primary" type="button" value="Se connecter" (click)="login()">
+        </div>
+    </div>
+
+    <div *ngIf="connectedUser">
+        <input class="btn btn-primary" type="button" value="Se déconnecter" (click)="logout()">
+    </div>
+    <div *ngIf="connectedUser">
+        Bienvenue {{connectedUser.login}}, vous êtes connecté :)
+    </div>
+
+    <div *ngIf="!connectedUser">
+        Vous êtes déconnecté
+    </div>
+</div>

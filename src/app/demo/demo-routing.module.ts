@@ -7,6 +7,7 @@ import { DemoDirectCustomComponent } from './components/demo-direct-custom/demo-
 import { DemoDirectStructComponent } from './components/demo-direct-struct/demo-direct-struct.component';
 import { DemoHomeComponent } from './components/demo-home/demo-home.component';
 import { DemoPipesComponent } from './components/demo-pipes/demo-pipes.component';
+import { DemoServicesComponent } from './components/demo-services/demo-services.component';
 import { IntervalComponent } from './components/interval/interval.component';
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'directCompo', component:DemoDirectCompoComponent},
   {path:'directStruct', component:DemoDirectStructComponent},
   {path:'directCustom', component:DemoDirectCustomComponent},
-  {path:'communication', component: DemoCommunicationComponent}
+  {path:'communication', component: DemoCommunicationComponent},
+  {path:'login', component : DemoServicesComponent}
 ];
 
 @NgModule({
