@@ -1,0 +1,9 @@
+<div class="enfant">
+    <h4>A acheter :</h4>
+    <ul>
+        <li class="flex" *ngFor="let product of listToShow; let i = index">
+            <div>{{product}}</div>
+            <input class="btn btn-danger" type="button" value="🗑" (click)="sendIndex(i)">
+        </li>
+    </ul>
+</div>

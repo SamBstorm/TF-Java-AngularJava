@@ -6,18 +6,23 @@ import { ExoHomeComponent } from './components/exo-home/exo-home.component';
 import { SharedModule } from '../shared/shared.module';
 import { ChronoComponent } from './components/chrono/chrono.component';
 import { ChronoViewPipe } from './pipes/chrono-view.pipe';
+import { ExoShoppingComponent } from './components/exo-shopping/exo-shopping.component';
+import { ShoppingListComponent } from './components/exo-shopping/shopping-list/shopping-list.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     ExoHomeComponent,
     ChronoComponent,
-    ChronoViewPipe
+    ChronoViewPipe,
+    ExoShoppingComponent,
+    ShoppingListComponent
   ],
   imports: [
     CommonModule,
     ExerciceRoutingModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class ExerciceModule { }

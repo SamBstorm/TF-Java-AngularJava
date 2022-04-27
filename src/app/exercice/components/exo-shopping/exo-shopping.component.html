@@ -1,0 +1,12 @@
+<div class="parent">
+    <h3>Ma liste de courses :</h3>
+    <div class="form-group">
+        <label for="product">Produit à ajouter :</label>
+        <input class="form-control" id="product" type="text" [(ngModel)]="productToAdd">
+    </div>
+    <div>
+        <input class="btn btn-primary" type="button" value="Ajouter" (click)="addToList()">
+    </div>
+    <!-- On fourni à l'enfant, la list du parent (products) qu'on met dans listToShow  -->
+    <app-shopping-list [listToShow]="products" (toDelete)="deleteFromList($event)"></app-shopping-list>
+</div>

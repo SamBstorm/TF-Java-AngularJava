@@ -20,7 +20,8 @@ export class NavigationComponent implements OnInit {
       new Link('Demo - Input & Output', '/communication', undefined, false),
     ],false),
     new Link('Exercices','/exo',[
-      new Link('Exercice - Chronomètre','/chrono',undefined,false)
+      new Link('Exercice - Chronomètre','/chrono',undefined,false),
+      new Link('Exercice - ShoppingList', '/shopping', undefined, false),
     ],false)
   ];
   constructor() { }
