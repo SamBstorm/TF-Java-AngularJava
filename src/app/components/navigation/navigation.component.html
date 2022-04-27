@@ -53,10 +53,10 @@
         </li>
     </ul> -->
     <ul>
-        <li *ngFor="let menuItem of menu">
+        <li *ngFor="let menuItem of menu; let i = index" (click)="toggleVisible(i)">
             <ng-container *ngIf="menuItem.children; else noChild">
                 {{menuItem.title}}
-                <ul *ngIf="menuItem.children && menuItem.children.length > 0">
+                <ul *ngIf="menuItem.children && menuItem.children.length > 0 && menuItem.isVisible">
                     <li *ngFor="let menuItemChild of menuItem.children">
                         <ng-container *ngIf="menuItem.url && menuItemChild.url; else noUrl">
                             <a [routerLink]="menuItem.url + menuItemChild.url">

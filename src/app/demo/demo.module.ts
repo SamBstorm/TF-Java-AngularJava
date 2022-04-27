@@ -14,6 +14,8 @@ import { DemoDirectStructComponent } from './components/demo-direct-struct/demo-
 import { DemoDirectCustomComponent } from './components/demo-direct-custom/demo-direct-custom.component';
 import { HighlineDirective } from './directives/highline.directive';
 import { AddLineDirective } from './directives/add-line.directive';
+import { DemoCommunicationComponent } from './components/demo-communication/demo-communication.component';
+import { DemoComEnfantComponent } from './components/demo-communication/demo-com-enfant/demo-com-enfant.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { AddLineDirective } from './directives/add-line.directive';
     DemoDirectStructComponent,
     DemoDirectCustomComponent,
     HighlineDirective,
-    AddLineDirective
+    AddLineDirective,
+    DemoCommunicationComponent,
+    DemoComEnfantComponent
   ],
   imports: [
     CommonModule,

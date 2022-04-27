@@ -1,0 +1,12 @@
+<div class="parent">
+    <h3>Composant parent</h3>
+    <input type="text" [(ngModel)]="monPrenom">
+    <div>{{messageEnfant}}</div>
+    <!-- <app-demo-com-enfant nomParent="Robert"></app-demo-com-enfant> -->
+    <app-demo-com-enfant (direBonjour)="afficherBonjour($event)" [nomParent]="monPrenom">
+        <p>Contenu entre balise ouvrante enfant et fermante enfant</p>
+        <p>Vraiment n'importe quel contenu</p>
+        <p>Genre autant de balises qu'on veut</p>
+        <div>Et de n'importe quel type :)</div>
+    </app-demo-com-enfant>
+</div>

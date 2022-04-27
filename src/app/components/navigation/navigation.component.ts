@@ -17,14 +17,19 @@ export class NavigationComponent implements OnInit {
       new Link('Démo - Directives Composants','/directCompo',undefined, false),
       new Link('Démo - Directives Structurelles','/directStruct',undefined, false),
       new Link('Démo - Directives Personnalisées','/directCustom',undefined, false),
-    ],true),
+      new Link('Demo - Input & Output', '/communication', undefined, false),
+    ],false),
     new Link('Exercices','/exo',[
       new Link('Exercice - Chronomètre','/chrono',undefined,false)
-    ],true)
+    ],false)
   ];
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleVisible(index : number) : void {
+    this.menu[index].isVisible = !this.menu[index].isVisible;
   }
 
 }

@@ -1,0 +1,11 @@
+<div class="enfant">
+    <h4>Composant enfant</h4>
+    <div>Je suis l'enfant de {{nomParent}}</div>
+    <input type="text" [(ngModel)]="prenomEnfant">
+    <input type="button" value="Dire bonjour" (click)="saluer()">
+
+    <div>
+        <ng-content></ng-content>
+    </div>
+</div>
+
