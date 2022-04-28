@@ -23,6 +23,7 @@ export class NavigationComponent implements OnInit {
     new Link('Exercices','/exo',[
       new Link('Exercice - Chronomètre','/chrono',undefined,false),
       new Link('Exercice - ShoppingList', '/shopping', undefined, false),
+      new Link('Exercice - ShoppingList avec Service', '/service', undefined, false),
     ],false)
   ];
   constructor() { }

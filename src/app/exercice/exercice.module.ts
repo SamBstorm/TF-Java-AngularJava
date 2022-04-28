@@ -9,6 +9,8 @@ import { ChronoViewPipe } from './pipes/chrono-view.pipe';
 import { ExoShoppingComponent } from './components/exo-shopping/exo-shopping.component';
 import { ShoppingListComponent } from './components/exo-shopping/shopping-list/shopping-list.component';
 import { FormsModule } from '@angular/forms';
+import { ExoServiceComponent } from './components/exo-service/exo-service.component';
+import { ShowlistComponent } from './components/exo-service/showlist/showlist.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     ChronoComponent,
     ChronoViewPipe,
     ExoShoppingComponent,
-    ShoppingListComponent
+    ShoppingListComponent,
+    ExoServiceComponent,
+    ShowlistComponent
   ],
   imports: [
     CommonModule,
