@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DemoRoutingModule } from './demo-routing.module';
 import { DemoHomeComponent } from './components/demo-home/demo-home.component';
 import { DemoBindingComponent } from './components/demo-binding/demo-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DemoPipesComponent } from './components/demo-pipes/demo-pipes.component';
 import { AveragePipe } from './pipes/average.pipe';
 import { SharedModule } from '../shared/shared.module';
@@ -17,6 +17,7 @@ import { AddLineDirective } from './directives/add-line.directive';
 import { DemoCommunicationComponent } from './components/demo-communication/demo-communication.component';
 import { DemoComEnfantComponent } from './components/demo-communication/demo-com-enfant/demo-com-enfant.component';
 import { DemoServicesComponent } from './components/demo-services/demo-services.component';
+import { DemoFormulaireComponent } from './components/demo-formulaire/demo-formulaire.component';
 
 
 @NgModule({
@@ -33,12 +34,13 @@ import { DemoServicesComponent } from './components/demo-services/demo-services.
     AddLineDirective,
     DemoCommunicationComponent,
     DemoComEnfantComponent,
-    DemoServicesComponent
+    DemoServicesComponent,
+    DemoFormulaireComponent
   ],
   imports: [
     CommonModule,
     DemoRoutingModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class DemoModule { }
