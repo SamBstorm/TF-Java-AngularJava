@@ -1,13 +1,18 @@
 <h3>M'enregistrer</h3>
-<form [formGroup]="registerForm">
+<form [formGroup]="registerForm" (ngSubmit)="register()">
     <div class="form-group">
         <label for="lastname">Nom de famille</label>
         <input class="form-control" id="lastname" type="text" formControlName="lastname">
+        <!-- <div *ngIf="!registerForm.get('lastname')?.valid" class="text-danger">Ce champs est invalide</div> -->
+        <div *ngIf="registerForm.get('lastname')?.errors?.['required'] && registerForm.get('lastname')?.touched" class="text-danger">Ce champs est requis</div>
+        <div *ngIf="registerForm.get('lastname')?.errors?.['minlength']" class="text-danger">Votre nom de famille doit faire plus de 2 caractères</div>
+        <div *ngIf="registerForm.get('lastname')?.errors?.['maxlength']" class="text-danger">Votre nom de famille doit faire moins de 20 caractères</div>
     </div>
 
     <div class="form-group">
         <label for="firstname">Prénom</label>
         <input class="form-control" id="firstname" type="text" formControlName="firstname">
+        <div *ngIf="registerForm.get('firstname')?.errors?.['required'] && registerForm.get('firstname')?.touched" class="text-danger">Ce champs est requis</div>
     </div>
 
     <div class="form-group">
@@ -23,21 +28,34 @@
     <div class="form-group">
         <label for="birthdate">Date de Naissance</label>
         <input class="form-control" id="birthdate" type="date" formControlName="birthdate">
+        <div *ngIf="registerForm.get('birthdate')?.errors?.['required'] && registerForm.get('birthdate')?.touched" class="text-danger">Ce champs est requis</div>
     </div>
 
     <div class="form-group">
         <label for="email">Email</label>
         <input class="form-control" id="email" type="email" formControlName="email">
+        <div *ngIf="registerForm.get('email')?.errors?.['email']" class="text-danger">Vous devez rentrer une adresse mail valide</div>
+    </div>
+
+    <div class="form-group">
+        <label for="phone">Téléphone</label>
+        <input class="form-control" id="phone" type="tel" formControlName="phone">
+        <div *ngIf="registerForm.get('phone')?.errors?.['pattern']" class="text-danger">Veuillez entrer un numéro de téléphone belge valide</div>
     </div>
 
     <div class="form-group">
         <label for="nationality">Nationalité</label>
-        <select class="form-control" id="nationality" formControlName="nationality">
+        <select class="form-select" id="nationality" formControlName="nationality">
             <option value="be">Belge</option>
             <option value="fr">Française</option>
             <option value="nl">Néerlandaise</option>
             <option value="en">Anglaise</option>
             <option value="it">Italienne</option>
         </select>
+        <div *ngIf="registerForm.get('nationality')?.errors?.['required'] && registerForm.get('nationality')?.touched" class="text-danger">Ce champs est requis</div>
+    </div>
+
+    <div>
+        <input [disabled]="registerForm.invalid" class="btn btn-primary" type="submit" value="S'enregister">
     </div>
 </form>
