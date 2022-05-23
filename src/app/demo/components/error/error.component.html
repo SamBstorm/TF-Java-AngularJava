@@ -1,0 +1,13 @@
+<div *ngIf="control && (control.touched || control.dirty) && control.errors" 
+           class="text-danger">
+    <p *ngIf="control.errors['required']">Ce champs est requis</p>
+    <p *ngIf="control.errors['maxlength']">
+        Ce champs doit avoir une longueur maximale de {{control.errors['maxlength'].requiredLength}}
+    </p>
+    <p *ngIf="control.errors['pattern']">
+        Le pattern est invalide <!--({{control.errors['pattern'].requiredPattern}})-->
+    </p>
+    <p *ngIf="control.errors['nissControl']">
+        Chiffres de controle invalide
+    </p>
+</div>

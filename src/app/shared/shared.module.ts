@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OperationPipe } from './pipes/operation.pipe';
 
 
@@ -11,10 +11,12 @@ import { OperationPipe } from './pipes/operation.pipe';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     FormsModule,
+    ReactiveFormsModule,
     OperationPipe
   ]
 })

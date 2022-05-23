@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/demo/services/login.service';
 import { Link } from 'src/app/models/link';
 
 @Component({
@@ -9,7 +10,7 @@ import { Link } from 'src/app/models/link';
 export class NavigationComponent implements OnInit {
 
   public menu : Link[] = [
-    new Link('Accueil','/',undefined, true),
+    new Link('Accueil','/home',undefined, true),
     new Link('Démonstrations','/demo',[
       new Link('Démo - Bindings','/binding',undefined, false),
       new Link('Démo - Pipes','/pipe',undefined, false),
@@ -17,14 +18,26 @@ export class NavigationComponent implements OnInit {
       new Link('Démo - Directives Composants','/directCompo',undefined, false),
       new Link('Démo - Directives Structurelles','/directStruct',undefined, false),
       new Link('Démo - Directives Personnalisées','/directCustom',undefined, false),
-    ],true),
+      new Link('Demo - Input & Output', '/communication', undefined, false),
+      new Link('Demo - Services', '/login', undefined, false),
+      new Link('Demo - Formulaires', '/formulaire', undefined, false),
+      new Link('Demo - Formulaires 2', '/formulaire2', undefined, false),
+      new Link('Demo - Routing', '/routing', undefined, false),
+      new Link('Demo - Page Privée', '/private', undefined),
+    ],false),
     new Link('Exercices','/exo',[
-      new Link('Exercice - Chronomètre','/chrono',undefined,false)
-    ],true)
+      new Link('Exercice - Chronomètre','/chrono',undefined,false),
+      new Link('Exercice - ShoppingList', '/shopping', undefined, false),
+      new Link('Exercice - ShoppingList avec Service', '/service', undefined, false),
+    ],false)
   ];
-  constructor() { }
+  constructor(public loginService: LoginService) { }
 
   ngOnInit(): void {
+  }
+
+  toggleVisible(index : number) : void {
+    this.menu[index].isVisible = !this.menu[index].isVisible;
   }
 
 }

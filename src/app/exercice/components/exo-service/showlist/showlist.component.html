@@ -1,0 +1,10 @@
+<h3>A acheter :</h3>
+<ul>
+    <li *ngFor="let product of productList; let i = index">
+        <div>{{product.name}}</div>
+        <div>{{product.quantity}}</div>
+        <div><input type="button" value="➖" (click)="removeQty(i)"></div>
+        <div><input type="button" value="➕" (click)="addQty(i)"></div>
+        <div><input type="button" value="🗑" (click)="supprimer(i)"></div>
+    </li>
+</ul>

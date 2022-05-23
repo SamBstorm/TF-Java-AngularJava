@@ -53,24 +53,26 @@
         </li>
     </ul> -->
     <ul>
-        <li *ngFor="let menuItem of menu">
+        <li *ngFor="let menuItem of menu; let i = index">
             <ng-container *ngIf="menuItem.children; else noChild">
-                {{menuItem.title}}
-                <ul *ngIf="menuItem.children && menuItem.children.length > 0">
-                    <li *ngFor="let menuItemChild of menuItem.children">
-                        <ng-container *ngIf="menuItem.url && menuItemChild.url; else noUrl">
-                            <a [routerLink]="menuItem.url + menuItemChild.url">
-                                <div>{{menuItemChild.title}}</div>
-                            </a>
-                        </ng-container>
+                <div (click)="toggleVisible(i)">{{menuItem.title}}</div>
+                <ul *ngIf="menuItem.children && menuItem.children.length > 0 && menuItem.isVisible">
+                    <ng-container *ngFor="let menuItemChild of menuItem.children">
+                        <li *ngIf="loginService.getConnectedUser() || menuItemChild.url != '/private'">
+                            <ng-container *ngIf="menuItem.url && menuItemChild.url; else noUrl">
+                                <a routerLinkActive="maClasse" [routerLink]="menuItem.url + menuItemChild.url">
+                                    <div>{{menuItemChild.title}}</div>
+                                </a>
+                            </ng-container>
+                        </li>
                         <ng-template #noUrl>
                             {{menuItemChild.title}}
                         </ng-template>
-                    </li>
+                    </ng-container>
                 </ul>
             </ng-container>
             <ng-template #noChild>
-                <a [routerLink]="menuItem.url">
+                <a routerLinkActive="maClasse" [routerLink]="menuItem.url">
                     <div>{{menuItem.title}}</div>
                 </a>
             </ng-template>
