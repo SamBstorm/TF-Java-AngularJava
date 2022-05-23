@@ -1,0 +1,11 @@
+<h1>Nouvelle tâche :</h1>
+<form [formGroup]="newTaskForm" (ngSubmit)="createTask()">
+    <div><label for="title">Titre : </label><input id="title" type="text" formControlName="title"></div>
+    <div><label for="description">Description : </label><textarea id="description" cols="60" rows="10" formControlName="description"></textarea></div>
+    <div><label for="deadline">Date finale : </label><input id="deadline" type="datetime-local" formControlName="deadline"></div>
+    <div class="btn-group">
+        <a class="btn btn-info"routerLink="/exo/todo-list">Return to list</a>
+        <input class="btn btn-warning" type="reset" value="Reset">
+        <input class="btn btn-success" type="submit" value="Save">
+    </div>
+</form>

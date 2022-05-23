@@ -1,0 +1,17 @@
+<h1>Liste des tâches :</h1>
+<a routerLink="/exo/todo-create" class="btn btn-success">New</a>
+<ol *ngIf="todolist.length > 0; else noList">
+    <li *ngFor="let task of todolist">
+        <div>
+            {{task.titre}}
+            <div class="btn-group">
+                <input type="button" class="btn btn-warning" value="Edit" (click)="editTask(task.id)">
+                <input type="button" class="btn btn-danger" value="Delete" (click)="deleteTask(task)">
+            </div>
+        </div>
+    </li>
+</ol>
+
+<ng-template #noList>
+    <p class="alert alert-success">Hourra, vous avez fini toutes vos tâches!</p>
+</ng-template>

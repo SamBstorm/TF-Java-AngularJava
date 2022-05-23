@@ -30,6 +30,7 @@ export class NavigationComponent implements OnInit {
       new Link('Exercice - Chronomètre','/chrono',undefined,false),
       new Link('Exercice - ShoppingList', '/shopping', undefined, false),
       new Link('Exercice - ShoppingList avec Service', '/service', undefined, false),
+      new Link('Exercice - TodoList', '/todo-list', undefined, false),
     ],false)
   ];
   constructor(public loginService: LoginService) { }

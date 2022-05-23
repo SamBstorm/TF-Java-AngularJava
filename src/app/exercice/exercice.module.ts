@@ -11,6 +11,9 @@ import { ShoppingListComponent } from './components/exo-shopping/shopping-list/s
 import { FormsModule } from '@angular/forms';
 import { ExoServiceComponent } from './components/exo-service/exo-service.component';
 import { ShowlistComponent } from './components/exo-service/showlist/showlist.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TodoCreateComponent } from './components/todo-create/todo-create.component';
+import { TodoEditComponent } from './components/todo-edit/todo-edit.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { ShowlistComponent } from './components/exo-service/showlist/showlist.co
     ExoShoppingComponent,
     ShoppingListComponent,
     ExoServiceComponent,
-    ShowlistComponent
+    ShowlistComponent,
+    TodoListComponent,
+    TodoCreateComponent,
+    TodoEditComponent
   ],
   imports: [
     CommonModule,
