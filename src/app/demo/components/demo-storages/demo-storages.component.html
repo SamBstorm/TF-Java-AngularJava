@@ -1,0 +1,17 @@
+<p>demo-storages works!</p>
+<h1>{{message}}</h1>
+<input type="button" value="Change value" (click)="changeMessage()">
+
+<h1>Liste de recherches :</h1>
+<input type="text" [(ngModel)]="searchTerm" placeholder="Introduire recherche">
+<input type="button" value="+" (click)="addSearchTerm()">
+
+<ol *ngIf="searchList.length > 0; else noList">
+    <li *ngFor="let search of searchList">
+        {{search}}
+    </li>
+</ol>
+
+<ng-template #noList>
+    <p>Aucune recherche enregistrée actuellement...</p>
+</ng-template>

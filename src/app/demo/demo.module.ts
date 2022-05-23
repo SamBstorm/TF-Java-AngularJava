@@ -23,6 +23,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { DemoRoutingComponent } from './components/demo-routing/demo-routing.component';
 import { DemoDetailsComponent } from './components/demo-routing/demo-details/demo-details.component';
 import { DemoGuardComponent } from './components/demo-guard/demo-guard.component';
+import { DemoStoragesComponent } from './components/demo-storages/demo-storages.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { DemoGuardComponent } from './components/demo-guard/demo-guard.component
     ErrorComponent,
     DemoRoutingComponent,
     DemoDetailsComponent,
-    DemoGuardComponent
+    DemoGuardComponent,
+    DemoStoragesComponent
   ],
   imports: [
     CommonModule,

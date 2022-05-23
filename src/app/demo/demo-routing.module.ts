@@ -14,6 +14,7 @@ import { DemoPipesComponent } from './components/demo-pipes/demo-pipes.component
 import { DemoDetailsComponent } from './components/demo-routing/demo-details/demo-details.component';
 import { DemoRoutingComponent } from './components/demo-routing/demo-routing.component';
 import { DemoServicesComponent } from './components/demo-services/demo-services.component';
+import { DemoStoragesComponent } from './components/demo-storages/demo-storages.component';
 import { IntervalComponent } from './components/interval/interval.component';
 import { IsAdminGuard } from './guards/is-admin.guard';
 import { TestResolver } from './resolvers/test.resolver';
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'formulaire', component : DemoFormulaireComponent},
   {path:'formulaire2', component : DemoFormulaire2Component},
   {path:'routing', component : DemoRoutingComponent},
+  {path:'storages', component : DemoStoragesComponent},
   // ajout d'un paramètre de route
   {path:'details/:id', component : DemoDetailsComponent, resolve: { val: TestResolver }},
   { path: 'private', component: DemoGuardComponent, canActivate: [IsAdminGuard] }
